@@ -36,7 +36,8 @@ namespace WebApp.Web.Pages
             //var programs = await programService.GetDesiredUWProgramsAsync();
             var programs = new List<ProgramDto>()
             {
-                new ProgramDto{ProgramId = 1, BusinessSubLineId = 1, UnderwritingYear = 2019}
+                new ProgramDto{ProgramId = 1, BusinessSubLineId = 1, UnderwritingYear = 2019},
+                new ProgramDto{ProgramId = 2, BusinessSubLineId = 1, UnderwritingYear = 2020}
             };
 
             Programs = programs.Select(p => new ProgramSummaryModel
