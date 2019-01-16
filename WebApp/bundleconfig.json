@@ -1,0 +1,16 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/css/css-app-bundle.css",
+    "inputFiles": [
+      "wwwroot/lib/css/app.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/js/app-bundle.js",
+    "inputFiles": [],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+]

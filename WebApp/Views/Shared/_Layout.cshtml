@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="robots" content="none">
+    <meta name="format-detection" content="telephone=no" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    @RenderSection("metasAndLinks", required: false)
+    @RenderSection("styles", required: false)
+
+    <environment names="development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/css/css-app-bundle.css" rel="stylesheet" />
+        <link href="~/lib/css/axa.25faf8b9.css" rel="stylesheet" />
+        <link href="~/lib/css/material-icons.css" rel="stylesheet" />
+        <link href="~/lib/bootstrap-material-design-icons/css/material-icons.css" rel="stylesheet" />
+    </environment>
+</head>
+<body>
+<div class="axaCS-container">
+    <section class="axaCS-row">
+        <aside class="axaCS-asideNav">
+            <Nav class="axaCS-MainNav">
+                <div class="axaCS-MainNav-container">
+                    <div class="axaCS-MainNav__header">
+                        <a class="axaCS-MainNav__header__link" href="#!" title="home">
+                            <img class="axaCS-MainNav__header__logo" src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMzIwLjY2NyAyNTMuODE0bC0zNy43MTItLjFMNDgwLjY3OC4wMDggNTExLjQyNSAwIDMyMC42NjcgMjUzLjgxNHoiIGZpbGw9IiNmZjE3MjEiLz48cGF0aCBkPSJNMjk4LjQ0MiAzNTQuNDg0YzE1LjY2LTE5LjI5NCAyOC42MjgtMzYuNTEgMzMuOTEyLTQ1LjAyM2wyLjA4Ny0zLjM2LjE2MyA0LjQ4NWMuMDkgMi40NjYuMzczIDUuNDQ1LjYzIDYuNjIuNjI4IDIuODYgMy42NzMgMTIuOTI0IDcuODQzIDI1LjkyIDEuODgzIDUuODcgMy40OSAxMC45OCAzLjU3IDExLjM1OGwuMTQ2LjY4NmgtNDguOTA3bC41NTYtLjY4NnptLTg3LjY5IDU1LjIyNGMtMi43NTctOC41NC0zLjk3LTEyLjcxMi0zLjc5Ny0xMy4wNTcuNDM1LS44NjYgMTIuMDktMTUuODY1IDEyLjMyOC0xNS44NjUuMTI0IDAgLjY3IDEuMzM4IDEuMjEgMi45NzMgMS44ODUgNS42OTggNS42OTYgMTYuNDEgNi42MiAxOC42MWwuOTMgMi4yMTQtMS42OSAyLjM1OGMtNS4wNzQgNy4wODMtMTEuMTc1IDE1LjMxNy0xMS4zNSAxNS4zMTctLjEwOCAwLTIuMDItNS42NDctNC4yNS0xMi41NXptLTEwOS4yOS01NC45MThjLjE2Mi0uMjEgMy4wMzUtMy44MTMgNi4zODQtOC4wMDYgOC4yLTEwLjI3IDE2LjU1LTIxLjE2IDIxLjA3NS0yNy41IDMuODQtNS4zNzQgOC4zMDUtMTIuMTcyIDguMzA1LTEyLjY0IDAtLjE0Ni4xMzctLjI2NS4zMDQtLjI2NS4xODUgMCAuMzA0IDEuMzU4LjMwNCAzLjQ2NiAwIDEuOTA2LjIxIDQuNjg1LjQ2NiA2LjE3NS41MTUgMi45OTIgMy4zMzUgMTIuNTEgOC40MDQgMjguMzY1IDEuODMgNS43MjUgMy4zMjggMTAuNDk0IDMuMzI4IDEwLjU5NyAwIC4xMDMtMTAuOTk1LjE4OC0yNC40MzMuMTg4LTE5LjUgMC0yNC4zNzQtLjA3Ny0yNC4xMzgtLjM4eiIgZmlsbD0iIzAwMDA4ZiIvPjxwYXRoIGQ9Ik01MTEuNjk1IDUxMS45MVMuMzE1IDUxMS44Mi4yMDMgNTExLjcwOEMuMDkgNTExLjU5NyAwIDQ1OS40NiAwIDQ1OS40NmgxMC45NzhjMTAuMDcgMCAxMS4wMTctLjA0NCAxMS40NTMtLjUzMy4yNjMtLjI5NCAxLjYtMi4zNSAyLjk3NS00LjU3MiAzLjM4Ny01LjQ3NiA5LjAwNi0xMy40ODMgMTIuNTY0LTE3LjkwNCAyLjk0OC0zLjY2NCAxNS42Ni0yMC4yMDUgMzQuMjIzLTQ0LjUzNWwxMC4wMDQtMTMuMTEyaDc1LjU4bDMuNzQ2IDEyLjk2IDQuMzQgMTUuMDIyLjU5IDIuMDYyTDE2MC4xNyA0MTdjLTE5LjQyNiAyNS4xOTgtMjIuNDA2IDI4Ljc5Ni0yOS45MzUgMzYuMTQ3LTMuNDQgMy4zNi01LjIxIDUuMy01LjE0NSA1LjY0LjA5Mi40ODIgMS40MS41MjcgMTcuODguNiA5Ljc4LjA0MyAxNy45NjQtLjAyNiAxOC4xODUtLjE1My4yMjItLjEyNyAxLjQ1OC0yLjMyNCAyLjc1LTQuODgyIDIuNDU1LTQuODY2IDQuOTIzLTguNTc4IDEwLjA1LTE1LjExNyAxLjY4Ny0yLjE1IDMuMjItNC4xMDYgMy40MDYtNC4zNDUuMTg1LS4yNC40Mi0uNDM1LjUyLS40MzUuMTg3IDAgMi4yNjcgNi40MjUgMy42NjMgMTEuMzEuNDEyIDEuNDQyIDEuMTMgNC45MiAxLjU5NiA3LjczLjQ4NCAyLjkzIDEuMDI4IDUuMjk0IDEuMjczIDUuNTM4LjM1Ni4zNTcgMy40MTguNDI3IDE4LjU0Mi40MjdoMTguMTE2bC40Mi0uNjg2Yy4yMzMtLjM3NyAxLjQzNi0yLjYwMyAyLjY3Ni00Ljk0NyAxLjI0LTIuMzQzIDMuMzA0LTUuNjY3IDQuNTg2LTcuMzg2IDMuMzItNC40NSA5LjE0Mi0xMS4xNTUgOS40MzQtMTAuODYuNjk0LjY5OCAzLjczOCAxMi4wMiA0LjY5IDE3LjQ0NS42MjQgMy41NiAxLjE5OCA2LjAxNyAxLjQ0IDYuMTcuNDU0LjI5IDQ1LjY3Ny4zNjYgNDYuNDIzLjA4LjI2NC0uMTAyLjQ4Mi0uMzUuNDgyLS41NSAwLS4xOTgtMS4xOC0yLjQ4Mi0yLjYyNC01LjA3NC01LjU1NC05Ljk3My01LjE1NS04LjkwOC0xNS45NTMtNDIuNTYyLTIuNjk3LTguNDA3LTQuOTA0LTE1LjQ0OC00LjkwNC0xNS42NDYgMC0uMTk4IDIuNjItNC4wNTggNS44Mi04LjU3OGw1LjgxOC04LjIxNiAzOC4wMS4wNzcgMzguMDEuMDc4IDUuNTc4IDE3Ljk5YzguMjUyIDI2LjYyIDEzLjEzNyA0Mi42NDcgMTMuOTU0IDQ1Ljc4NC45MiAzLjUzNyAxLjYzOCA4LjM1NCAxLjg4NCAxMi42NTguMTMgMi4yNzQuMzMzIDMuNTAyLjYyNCAzLjc5NC4zNjQuMzYzIDQuMTIuNDMgMjQuMTcuNDMgMTMuMDU2IDAgMjMuOTU2LS4wODMgMjQuMjItLjE4NS43MDMtLjI3LjYxLS42MDMtLjYxNS0yLjE5Ny0yLjIzNS0yLjkxLTUuODktMTEuMzc0LTEwLjQ0LTI0LjE5LTIuNjYtNy40ODMtOC4zMTMtMjQuNjgzLTE1LjkxNC00OC40MTctMi43MS04LjQ1NC01LjMzLTE2LjQ3Ni01LjgzLTE3LjgyNy0xLjcyMi00LjY3My0yNC45MjgtODUuNjU3LTI1LjM5NC04OC42MjRhMTQzLjk0IDE0My45NCAwIDAgMS0uNzg4LTYuMWMtLjE4NC0xLjc2LS40MDUtMy40NDItLjQ5Mi0zLjczNS0uMTUtLjUtMS4zMy0uNTM0LTE5LjE3OC0uNTM0aC0xOS4wMmwtMS4zMzYgMi44MjJjLTEuNzYgMy43MS02LjQ4NiAxMS44MzUtOS4wMDIgMTUuNDc2LTYuNzQ1IDkuNzU3LTU5LjY2MiA3OS41NzctNjAuMDI0IDc5LjE5Ni0uMjY1LS4yOC01LjYwNy0xOS4yOTMtNS41LTE5LjU3NC4xMjYtLjMyNyAxMS40NS0xNC43NjMgMzcuNjc1LTQ4LjAzNSAxMi4yODgtMTUuNTkgMTguMTItMjIuMzAyIDIzLjE4LTI2LjY4MiAxLjM1Ny0xLjE3NCAyLjQ2Ny0yLjM3NCAyLjQ2Ny0yLjY2OCAwLS41MDMtMS4xMjctLjUzNC0xOS41MS0uNTM0aC0xOS41MWwtLjE1Mi42ODdhNzguMDYxIDc4LjA2MSAwIDAgMC0uNDczIDIuNTc0Yy0uNzE2IDQuMTkyLTIuMDIyIDYuOTEzLTUuNTM2IDExLjUzLTUuNjY2IDcuNDQ3LTI5Ljc2MyAzNy43NzMtMzAuMTE0IDM3LjktLjEzMi4wNDgtLjgyMi0yLjAxLTEuNTMzLTQuNTc0LTIuMS03LjU2OC03LjQ1LTI2LjQ2Mi05LjI3Ni0zMi43Ni0xLjYxNS01LjU2OC0yLjEyOC04LjUxLTIuNDEtMTMuODNsLS4wNzItMS4zNzMtMjMuMTYtLjA3OGMtMTQuMTgtLjA0OC0yMy4yNy4wMzMtMjMuNDQ0LjIxLS4xOC4xNzguMjMgMS4yOTQgMS4wOTQgMi45NzQgMy42NDYgNy4wOSA1LjM2IDExLjg5MiAxNi42OTcgNDYuNzY2IDYuMjI4IDE5LjE2MiAxMS4yNjQgMzUuMDcgMTEuMTkgMzUuMzU0LS4yMi44MzYtMTEuOTAzIDE1LjU4Mi0xMi4xNDggMTUuMzMtLjYwOC0uNjI1LTI1LjE5Mi04MS4wNTUtMjUuNzQ2LTg0LjIzLS4yNDgtMS40Mi0uNzMtNS40LTEuMDczLTguODQ1LS4zNDMtMy40NDQtLjY4Ni02LjU3LS43NjQtNi45NDhsLS4xNDItLjY4NmgtNDAuMTMzbC00LjE0NyA4LjMxYy0yLjI4IDQuNTctNS4xODIgMTAuMDQ0LTYuNDQ2IDEyLjE2NC0yLjg4NiA0LjgzNy0yMS4yNSAyOS40NDgtNDcuNzU0IDYzLjk5NkE3MzUxLjgwNSA3MzUxLjgwNSAwIDAgMCA1NC4yOCAzNzQuMDhhMjY1My40NjMgMjY1My40NjMgMCAwIDEtNDIuNjc2IDU0LjcxMmMtNS42MjcgNy4wMy0xMC41MzUgMTMuMTM2LTEwLjkwNyAxMy41N2wtLjY3NS43ODhMMCAwaDQ4MS45NDZTNDI5LjYzIDY4LjMyMiAzMjQuNTIgMjA0LjMxNWMtMjAuMzI3IDI2LjI5OC0zNi45NTggNDguMDY3LTM2Ljk1OCA0OC4zNzQgMCAuMzIuMjkuNjM2LjY4Ni43NC45LjI0MyAyNy45MjQuMjQgMjguODI1IDAgLjczNC0uMTk3IDEuMTc3LS43NjUgNDIuMDA0LTUzLjc4IDEyLjcyMy0xNi41MjIgMjYuMzA0LTM0LjE1NSAzMC4xODItMzkuMTg2QzQwNS42NDIgMTM5LjIwNCA1MTEuMjc2LjE2IDUxMS40MjQgMGwuMjcgNTExLjkxeiIgZmlsbD0iIzAwMDA4ZiIvPjwvc3ZnPg==" alt="logo Axa">
+                            <h1 class="axaCS-MainNav__header__title"><span>TEST</span>
+                            </h1>
+                        </a>
+                    </div>
+                    @if (IsSectionDefined("mainNav"))
+                    {
+                        <ul class="axaCS-MainNav__lists">
+                            @RenderSection("mainNav", required: false)
+                        </ul>
+                    }
+                </div>
+            </Nav>
+        </aside>
+        <div class="axaCS-content">
+
+            @* =========== Header =============== *@
+
+            <header class="axaCS-header">
+                <div class="header axaCS-headerContainer">
+                    <div class="axaCS-header__navLeft">
+                        <div class="axaCS-header__sidebarToggle">
+                            <a class="axaCS-header__sidebarToggleLink" href="#!">
+                                <i class="material-icons">menu</i>
+                            </a>
+                        </div>
+                        @if (IsSectionDefined("breadcrumb"))
+                        {
+                            <ul class="axaCS-header__breadcrumb">
+                                @RenderSection("breadcrumb", required: false)
+                            </ul>
+                        }
+                    </div>
+                    <div class="axaCS-header__navRight">
+                        <nav class="axaCS-header__navTools">
+                            <ul class="axaCS-header__navTools__lists">
+                                @RenderSection("navtools", required: false)
+                                <li class="axaCS-header__navTools__list dropdown">
+                                    <a class="axaCS-header__navTools__link" href="#!" data-toggle="dropdown">
+                                        <span class="axaCS-header__navTools__linkContent">
+                                            <i class="material-icons">account</i><span class="axaCS-header__navTools__text">Account</span><i class="icon-Down_Blue"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a asp-action="LogOut" asp-controller="Account" class="dropdown-item">Sign out</a></li>
+                                    </ul>
+                                </li>
+                                <li class="axaCS-header__navTools__list">
+                                    <a class="axaCS-helper" href="#!" title="Need help ?" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <i class="material-icons">help</i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <main class="axaCS-mainContent">
+                @RenderBody()
+            </main>
+        </div>
+        <div class="axaCS-drawer axaCS-drawer--right" id="RightEditor">
+        </div>
+        <environment names="development">
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+            <script src="~/lib/jQuery/dist/jquery.js" type="text/javascript"></script>
+            <script src="~/lib/jQuery/dist/jquery.min.js" type="text/javascript"></script>
+            <script src="~/lib/js/app-bundle.js" type="text/javascript"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+            <script src="~/lib/js/axa-main.34d25469.js"></script>
+        </environment>
+    </section>
+    @RenderSection("helpers", required: false)
+    @RenderSection("scripts", required: false)
+</div>
+</body>
+</html>

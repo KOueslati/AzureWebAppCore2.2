@@ -1,0 +1,13 @@
+﻿@page
+@model WebApp.Web.Pages.Shared.ProgramSummaryModel
+@addTagHelper*,  Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<tr>
+    <td>@Model.ProgramId</td>
+    <td>@Model.ClientHolding</td>
+    <td>@Model.BusinessSubLine</td>
+    <td>@Model.UnderWritingYear</td>
+    <td><a asp-page="./EditProgram" asp-route-id="@Model.ProgramId">Edit</a></td>
+</tr>
+
