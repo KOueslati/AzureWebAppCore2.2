@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
 using log4net.Core;
-using Microsoft.Extensions.Logging;
 using UWProgramApi.v1_0;
 using UWProgramApi.v1_0.Models;
 using ILogger = log4net.Core.ILogger;
