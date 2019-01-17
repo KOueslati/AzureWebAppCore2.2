@@ -26,9 +26,12 @@ namespace WebApp.Web.Pages
         }
 
         public List<ProgramSummaryModel> Programs { get; private set; }
+        public string Message { get; private set; }
+
         public async Task OnGetAsync()
         {
             _logger.Info("Home Page");
+            Message = _configuration.GetValue<string>("Message");
             //var authenticationSection = _configuration.GetSection("Authentication");
             //var accessToken = await HttpContext.GetTokenAsync(authenticationSection.GetValue<string>("CookieName"), "access_token");
             //var programClient = new UWProgramApiClient(new Uri(_configuration.GetValue<string>("app:UWProgramApi_baseUri")), new TokenCredentials(accessToken));

@@ -5,14 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<p>@Model.Message</p>
+
+
+
 <table class="table">
     <thead class="thead-light">
-    <tr>
-        <th><label>Program Id</label></th>
-        <th><label>Client holding</label></th>
-        <th><label>Business sub-line</label></th>
-        <th><label>Underwriting year</label></th>
-    </tr>
+        <tr>
+            <th><label>Program Id</label></th>
+            <th><label>Client holding</label></th>
+            <th><label>Business sub-line</label></th>
+            <th><label>Underwriting year</label></th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var program in Model.Programs)
