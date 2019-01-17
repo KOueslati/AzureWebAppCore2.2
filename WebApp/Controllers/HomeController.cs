@@ -14,7 +14,6 @@ using WebApp.Web.Pages;
 
 namespace WebApp.Web.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private IUWProgramService programService;
@@ -25,17 +24,10 @@ namespace WebApp.Web.Controllers
         {
             this.configuration = configuration;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             _logger.Info("Home Page");
-            var model = new HomeModel(configuration);
-            var authenticationSection = configuration.GetSection("Authentication");
-            var accessToken = await HttpContext.GetTokenAsync(authenticationSection.GetValue<string>("CookieName"), "access_token");
-            var programClient = new UWProgramApiClient(new Uri(configuration.GetValue<string>("app:UWProgramApi_baseUri")), new TokenCredentials(accessToken));
-            programService = new UWProgramService(programClient);
-            var result = programService.GetDesiredUWPrograms();
-
-            return View(result);
+            return null;
         }
     }
 }
