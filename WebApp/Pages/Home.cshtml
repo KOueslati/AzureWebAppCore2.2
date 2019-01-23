@@ -27,7 +27,7 @@
                 <td>@program.ClientHolding</td>
                 <td>@program.BusinessSubLine</td>
                 <td>@program.UnderWritingYear</td>
-                <td><a href="#" asp-page="/EditProgram" asp-route-id="@program.ProgramId">Edit</a></td>
+                <td><a asp-page="./EditProgram" asp-route-id="@program.ProgramId">Edit</a></td>
             </tr>
         }
     </tbody>

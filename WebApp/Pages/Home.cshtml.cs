@@ -46,5 +46,7 @@ namespace WebApp.Web.Pages
             Programs = programs.Select(p => new ProgramSummaryModel
                 {ProgramId = (int) p.ProgramId, BusinessSubLine = p.BusinessSubLineId.ToString(), UnderWritingYear = (int)p.UnderwritingYear}).ToList();
         }
+
+
     }
 }
