@@ -1,5 +1,6 @@
 ﻿@page
 @model WebApp.Web.Pages.HomeModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,6 +18,7 @@
             <th><label>Client holding</label></th>
             <th><label>Business sub-line</label></th>
             <th><label>Underwriting year</label></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +29,9 @@
                 <td>@program.ClientHolding</td>
                 <td>@program.BusinessSubLine</td>
                 <td>@program.UnderWritingYear</td>
-                <td><a asp-page="./EditProgram" asp-route-id="@program.ProgramId">Edit</a></td>
+                <td>
+                    <a asp-page="./EditProgram" asp-route-id="@program.ProgramId">edit</a>
+                </td>
             </tr>
         }
     </tbody>

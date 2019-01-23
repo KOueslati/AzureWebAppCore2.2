@@ -10,70 +10,38 @@
     <meta name="robots" content="none">
     <meta name="format-detection" content="telephone=no" />
     <title>@ViewBag.Title</title>
-    @*<link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />*@
-    @RenderSection("metasAndLinks", required: false)
+
     @RenderSection("styles", required: false)
 
-    <environment names="development">
+    <environment names="Development,Staging,Production">
         <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
         <link href="~/lib/css/css-app-bundle.css" rel="stylesheet" />
-        <link href="~/lib/css/axa.25faf8b9.css" rel="stylesheet" />
         <link href="~/lib/css/material-icons.css" rel="stylesheet" />
         <link href="~/lib/bootstrap-material-design-icons/css/material-icons.css" rel="stylesheet" />
     </environment>
 </head>
 <body>
-<div class="axaCS-container">
-    <section class="axaCS-row">
-        <aside class="axaCS-asideNav">
-            <Nav class="axaCS-MainNav">
-                <div class="axaCS-MainNav-container">
-                    <div class="axaCS-MainNav__header">
-                        <a class="axaCS-MainNav__header__link" href="#!" title="Test">
-                            <h1 class="axaCS-MainNav__header__title"><span>TEST</span>
-                            </h1>
-                        </a>
-                    </div>
-                    @if (IsSectionDefined("mainNav"))
-                    {
-                        <ul class="axaCS-MainNav__lists">
-                            @RenderSection("mainNav", required: false)
-                        </ul>
-                    }
-                </div>
-            </Nav>
-        </aside>
-        <div class="axaCS-content">
-
-            @* =========== Header =============== *@
-
-            <header class="axaCS-header">
-                <div class="header axaCS-headerContainer">
-                    <div class="axaCS-header__navLeft">
-                        <div class="axaCS-header__sidebarToggle">
-                            <a class="axaCS-header__sidebarToggleLink" href="#!">
-                                <i class="material-icons">menu</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <main class="axaCS-mainContent">
-                @RenderBody()
-            </main>
+    @*Header*@
+    <div class="container">
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" asp-page="Home">Home</a>
         </div>
-        <environment names="development">
-            <script src="~/lib/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
-            <script src="~/lib/jQuery/dist/jquery.js" type="text/javascript"></script>
-            <script src="~/lib/jQuery/dist/jquery.min.js" type="text/javascript"></script>
-            <script src="~/lib/js/app-bundle.js" type="text/javascript"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-            <script src="~/lib/js/axa-main.34d25469.js"></script>
-        </environment>
-    </section>
+    </div>
+<div class="container">
+
+    @RenderBody()
+
+    <environment names="Development,Staging,Production">
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+        <script src="~/lib/jQuery/dist/jquery.js" type="text/javascript"></script>
+        <script src="~/lib/jQuery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="~/lib/js/app-bundle.js" type="text/javascript"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+
     @RenderSection("scripts", required: false)
+
 </div>
+
 </body>
 </html>
