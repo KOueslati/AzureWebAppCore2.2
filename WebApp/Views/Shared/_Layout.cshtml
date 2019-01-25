@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=no" />
@@ -19,6 +20,7 @@
         <link href="~/lib/css/material-icons.css" rel="stylesheet" />
         <link href="~/lib/bootstrap-material-design-icons/css/material-icons.css" rel="stylesheet" />
     </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
     @*Header*@
