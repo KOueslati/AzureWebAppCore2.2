@@ -15,6 +15,8 @@ using log4net;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using WebApp.Dal;
 
 namespace WebApp
 {
@@ -98,6 +100,9 @@ namespace WebApp
             //    });
 
             services.AddLogging(builder => builder.AddLog4Net());
+
+            services.AddDbContext<AzureWebAppContext>(optionsBuilder =>
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("AzureWebAppDBConnection")));
 
             services.AddMvc().AddRazorPagesOptions(options =>
             {
