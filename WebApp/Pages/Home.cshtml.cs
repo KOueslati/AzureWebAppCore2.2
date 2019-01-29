@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Rest;
+using WebApp.Dal;
 
 namespace WebApp.Web.Pages
 {
@@ -16,10 +17,12 @@ namespace WebApp.Web.Pages
     {
         private readonly IConfiguration _configuration;
         private readonly ILog _logger = LogManager.GetLogger(typeof(HomeModel));
+        private readonly AzureWebAppContext _context;
 
-        public HomeModel(IConfiguration configuration)
+        public HomeModel(IConfiguration configuration, AzureWebAppContext context)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public List<ProgramSummaryModel> Programs { get; private set; }
@@ -29,12 +32,16 @@ namespace WebApp.Web.Pages
         {
             _logger.Info("Home Page");
             Message = _configuration.GetValue<string>("Message");
+            var listProgram = _context.Programs.ToList();
+
+            Programs = listProgram.Select(x => new ProgramSummaryModel
+                {ProgramId = x.Id, BusinessSubLine = x.BusinessLine, ClientHolding = x.Client}).ToList();
            
-            Programs = new List<ProgramSummaryModel>()
-            {
-                new ProgramSummaryModel{ProgramId = 1, BusinessSubLine = "1", UnderWritingYear = 2019},
-                new ProgramSummaryModel{ProgramId = 2, BusinessSubLine = "2", UnderWritingYear = 2020}
-            };
+            //Programs = new List<ProgramSummaryModel>()
+            //{
+            //    new ProgramSummaryModel{ProgramId = 1, BusinessSubLine = "1", UnderWritingYear = 2019},
+            //    new ProgramSummaryModel{ProgramId = 2, BusinessSubLine = "2", UnderWritingYear = 2020}
+            //};
         }
     }
 }
